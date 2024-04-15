@@ -1,0 +1,24 @@
+.header{
+    text-align: center;
+}
+
+
+.container{
+    width: 50vw;
+    height: 100%;
+    background-color: rgb(255, 249, 244);
+    
+     border: 1px solid rgba(0, 0, 0, 0.511);
+     border-radius: 10px;
+}
+
+.container .card{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 1px;
+}
+
+
+
