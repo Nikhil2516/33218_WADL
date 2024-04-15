@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Profile Page</h2>
+            <button onclick="logOut()" style="float: right;">Logout</button>
+            <br>
+            <h3>Welcome </h3>
+            <h4 class="flex">Name : 
+                <script>
+                    document.write(localStorage.getItem("name"))
+                </script>
+            </h4>
+            <h4 class="flex">Email ID : 
+                <script>
+                    document.write(localStorage.getItem("email"))
+                </script>
+            </h4>
+        </div>
+    </div>
+</body>
+
+<script>
+    function logOut(){
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        window.location = "login.html"
+    }
+</script>
+</html>

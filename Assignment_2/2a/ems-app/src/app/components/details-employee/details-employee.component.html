@@ -1,0 +1,69 @@
+<div>
+  <h3 style="text-align: center">Edit Employee Details</h3>
+
+  <div *ngIf="currentEmployee._id" class="edit-form">
+    <h4>Employee</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentEmployee.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dept">Department</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dept"
+          [(ngModel)]="currentEmployee.dept"
+          name="dept"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exp">Experience</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exp"
+          [(ngModel)]="currentEmployee.exp"
+          name="exp"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sal">Salary</label>
+        <input
+          type="text"
+          class="form-control"
+          id="sal"
+          [(ngModel)]="currentEmployee.sal"
+          name="sal"
+        />
+      </div>
+    </form>
+
+    <button class="btn btn-danger mr-2" (click)="deleteEmployee()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="btn btn-success mb-2"
+      (click)="updateEmployee()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentEmployee._id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</div>

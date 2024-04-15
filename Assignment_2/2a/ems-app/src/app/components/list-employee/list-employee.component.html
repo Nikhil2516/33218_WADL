@@ -1,0 +1,41 @@
+<div>
+  <div style="text-align: center; margin: 20px">
+    <h3>View All Employees</h3>
+    <button class="btn btn-danger" (click)="removeAllEmployees()">
+      Clear All
+    </button>
+  </div>
+
+  <div class="list row">
+    <table class="table mt-3">
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Experience</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.dept }}</td>
+          <td>{{ emp.exp }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>
+            <button class="btn btn-info" routerLink="/employees/{{ emp._id }}">
+              Edit
+            </button>
+
+            <button
+              style="margin-left: 10px"
+              class="btn btn-danger"
+              (click)="deleteEmployee(emp._id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
